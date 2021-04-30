@@ -28,6 +28,39 @@
                     <!-- Page Heading -->
                     <h1 class="h2 mb-4 text-center text-gray-800">Data Pasien</h1>
 
+                    <table class="table table-striped">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th>Nama</th>
+                                <th>Kode</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Tempat Lahir</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
+                            <?php
+                                foreach($pasien->result() as $pasien){
+                                     echo'    
+                                    <tr>
+                                        <td>'.$pasien->nama.'</td>
+                                        <td>'.$pasien->kode.'</td>
+                                        <td>'.$pasien->gender.'</td>
+                                        <td>'.$pasien->tmp_lahir.'</td>
+                                        <td>'.$pasien->tgl_lahir.'</td>
+                                        <td>'.$pasien->email.'</td>
+                                        <td><a href="'.base_url().'index.php/pasien/delete/'.$pasien->id.'">Delete</a></td>
+                                    </tr>       
+                                     ';   
+                                }
+
+                            ?>
+                        </tbody>
+                    </table>
+
                 </div>
                 <!-- /.container-fluid -->
 
