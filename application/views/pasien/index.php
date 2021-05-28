@@ -27,6 +27,7 @@
 
                     <!-- Page Heading -->
                     <h1 class="h2 mb-4 text-center text-gray-800">Data Pasien</h1>
+                    <a href="<?php echo base_url()?>index.php/pasien/save" class="btn btn-primary">Tambah</a>
 
                     <table class="table table-striped">
                         <thead class="bg-primary text-white">

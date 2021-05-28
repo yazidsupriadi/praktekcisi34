@@ -13,12 +13,14 @@ class Pasien_model extends CI_Model{
     public function getAllData(){
 
         //select * from pasien
+        // $this->db->get('nama_tabel');
        $query = $this->db->get('pasien');
        return $query;
     }
 
     public function findById($id){
         //select * from pasien where id = id;
+        //$this->db->get_where('nama_tabel',array(id));
        $query = $this->db->get_where('pasien',['id'=>$id]);
        return $query->row();
     }
@@ -29,6 +31,13 @@ class Pasien_model extends CI_Model{
         $this->db->delete($table);
     }
     
+    public function save($data){
+
+        //this->db->insert('nama_tabel',data)
+
+        return $this->db->insert('pasien',$data);
+    }
+
 
 }
 

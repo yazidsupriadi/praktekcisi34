@@ -19,6 +19,30 @@ class Pasien extends CI_Controller {
 
 
 	}
+
+	public function save(){
+		
+		$this->load->view('pasien/tambah_pasien');
+	}
 	
+	public function add(){
+		
+		//panggil model
+		$this->load->model('pasien_model');
+		
+		//tambah data
+		$data['kode'] = $this->input->post('kode');
+		$data['nama'] = $this->input->post('nama');
+		$data['gender'] = $this->input->post('gender');
+		$data['tmp_lahir'] = $this->input->post('tmp_lahir');
+		$data['tgl_lahir'] = $this->input->post('tgl_lahir');
+		$data['email'] = $this->input->post('email');
+		$this->pasien_model->save($data);
+
+		//redirect	
+		return redirect('pasien/index');
+
+
+	}
 
 }
