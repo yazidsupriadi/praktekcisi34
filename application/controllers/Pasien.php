@@ -3,6 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pasien extends CI_Controller {
 
+	//check user sudah login atau belum
+	public function __construct(){
+		parent::__construct();
+	
+		if($this->session->userdata('status') != "login"){
+			redirect('login/login');
+		}
+	}
 	public function index()
 	{	
 		$this->load->model('pasien_model');
@@ -25,7 +33,7 @@ class Pasien extends CI_Controller {
 		$this->load->view('pasien/tambah_pasien');
 	}
 	
-	public function add(){
+	public function tambah(){
 		
 		//panggil model
 		$this->load->model('pasien_model');
@@ -37,6 +45,8 @@ class Pasien extends CI_Controller {
 		$data['tmp_lahir'] = $this->input->post('tmp_lahir');
 		$data['tgl_lahir'] = $this->input->post('tgl_lahir');
 		$data['email'] = $this->input->post('email');
+
+		//method save data
 		$this->pasien_model->save($data);
 
 		//redirect	
@@ -44,5 +54,7 @@ class Pasien extends CI_Controller {
 
 
 	}
+
+	
 
 }

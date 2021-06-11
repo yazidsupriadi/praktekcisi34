@@ -28,7 +28,7 @@
                     <!-- Page Heading -->
                     <h1 class="h2 mb-4 text-center text-gray-800">Tambah Pasien</h1>
 
-                    <form action="<?php echo base_url()?>index.php/pasien/add" method="post" 
+                    <form action="<?php echo base_url()?>index.php/pasien/tambah" method="post" 
                     class="form-group">
                     
                     <label for="">Kode</label>
