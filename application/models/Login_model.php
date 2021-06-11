@@ -9,6 +9,14 @@ class Login_model extends CI_Model{
         return $this->db->get_where($table,$where);
     }
 
+    public function register($table,$data){
+
+        //this->db->insert('nama_tabel',data)
+
+        return $this->db->insert($table,$data);
+    }
+  
+
 }
 
 
