@@ -26,43 +26,37 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h2 mb-4 text-center text-gray-800">Tambah Pasien</h1>
-                    <?php echo form_open_multipart('pasien/update'); ?>
-                     
+                    <h1 class="h2 mb-4 text-center text-gray-800">Data Pasien</h1>
+                    <a href="<?php echo base_url()?>index.php/kuliner/save" class="btn btn-primary">Tambah</a>
                     
-                    <input type="hidden" name="id" class="form-control" value="<?= $pasien->id?>">
+                    <a href="<?php echo base_url()?>index.php/login/logout" class="btn btn-primary">Logout</a>
 
-                    
-                    <label for="">Kode</label>
-                    <input type="text" name="kode" class="form-control" value="<?= $pasien->kode?>">
+                    <table class="table table-striped">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th>Nama</th>
+                                <th>Action</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
+                            <?php
+                                foreach($jenis_kuliner->result() as $kuliner){
+                                     echo'    
+                                    <tr>
+                                        <td>'.$kuliner->nama.'</td>
+                                        
+                                        <td>
+                                        <a class="btn btn-success" href="'.base_url().'index.php/kuliner/view/'.$kuliner->id.'">View</a>
+                                        <a class="btn btn-primary" href="'.base_url().'index.php/kuliner/edit/'.$kuliner->id.'">Edit</a>
+                                        <a class="btn btn-danger" href="'.base_url().'index.php/kuliner/delete/'.$kuliner->id.'">Delete</a></td>
+                                    </tr>       
+                                     ';   
+                                }
 
-                    
-                    <label for="">Nama</label>
-                    <input type="text" name="nama" class="form-control"value="<?= $pasien->nama?>">
-
-                    <select name="gender" class="form-control" >
-                        <option value="">Masukan Jenis Kelamin</option>
-                        <option value="Laki Laki">Laki Laki</option>
-                        <option value="Perempuan">Perempuan</option>
-                    </select>
-                    
-                    <label for="">Tempat Lahir</label>
-                    <input type="text" name="tmp_lahir" class="form-control" value="<?= $pasien->tmp_lahir?>">
-                    
-                    <label for="">Tanggal Lahir</label>
-                    <input type="date" name="tgl_lahir" class="form-control" value="<?= $pasien->tgl_lahir?>">
-                    
-                    <label for="">Email</label>
-                    <input type="text" name="email" class="form-control" value="<?= $pasien->email?>">
-                    
-                    
-                    <label for="">Upload Foto</label>
-                    <input type="file" name="foto" class="form-control">
-                    
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-
-                    <?php echo form_close(); ?>
-                     
+                            ?>
+                        </tbody>
+                    </table>
 
                 </div>
                 <!-- /.container-fluid -->

@@ -58,7 +58,7 @@
             </li>  
           </ul>
           <span class="navbar-text">
-            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link" href="<?=base_url()?>index.php/login/login">Login</a>
           </span>
         </div>
       </div> 

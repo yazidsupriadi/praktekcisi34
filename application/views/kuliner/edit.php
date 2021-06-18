@@ -27,42 +27,19 @@
 
                     <!-- Page Heading -->
                     <h1 class="h2 mb-4 text-center text-gray-800">Tambah Pasien</h1>
-                    <?php echo form_open_multipart('pasien/update'); ?>
-                     
-                    
-                    <input type="hidden" name="id" class="form-control" value="<?= $pasien->id?>">
+                    <form action="<?=base_url()?>index.php/kuliner/update" method="post">
+                    <input type="hidden" name="id" class="form-control" value="<?= $jenis_kuliner->id?>">
 
                     
-                    <label for="">Kode</label>
-                    <input type="text" name="kode" class="form-control" value="<?= $pasien->kode?>">
-
-                    
+                   
                     <label for="">Nama</label>
-                    <input type="text" name="nama" class="form-control"value="<?= $pasien->nama?>">
-
-                    <select name="gender" class="form-control" >
-                        <option value="">Masukan Jenis Kelamin</option>
-                        <option value="Laki Laki">Laki Laki</option>
-                        <option value="Perempuan">Perempuan</option>
-                    </select>
-                    
-                    <label for="">Tempat Lahir</label>
-                    <input type="text" name="tmp_lahir" class="form-control" value="<?= $pasien->tmp_lahir?>">
-                    
-                    <label for="">Tanggal Lahir</label>
-                    <input type="date" name="tgl_lahir" class="form-control" value="<?= $pasien->tgl_lahir?>">
-                    
-                    <label for="">Email</label>
-                    <input type="text" name="email" class="form-control" value="<?= $pasien->email?>">
-                    
-                    
-                    <label for="">Upload Foto</label>
-                    <input type="file" name="foto" class="form-control">
-                    
+                    <input type="text" name="nama" class="form-control"value="<?= $jenis_kuliner->nama?>">
                     <button type="submit" class="btn btn-primary">Simpan</button>
 
-                    <?php echo form_close(); ?>
-                     
+
+                    </form> 
+                    
+
 
                 </div>
                 <!-- /.container-fluid -->

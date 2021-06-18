@@ -43,19 +43,35 @@
     </div>
 </li>
 
-<!-- Nav Item - Utilities Collapse Menu -->
+
+<!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-        aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-wrench"></i>
-        <span>Dokter</span>
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+        aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-fw fa-user"></i>
+        <span>Wisata</span>
     </a>
-    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-        data-parent="#accordionSidebar">
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Dokter</h6>
-            <a class="collapse-item" href="utilities-color.html">Data Dokter</a>
-            <a class="collapse-item" href="utilities-border.html">Jadwal Dokter</a>
+            <h6 class="collapse-header">pasien</h6>
+            <a class="collapse-item" href="<?php echo base_url('/index.php/wisata/index') ?>">Data Wisata</a>
+            <a class="collapse-item" href="<?php echo base_url('/index.php/wisata/tambah_wisata') ?>">tambah wisata</a>
+        </div>
+    </div>
+</li>
+
+<!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+        aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-fw fa-user"></i>
+        <span>Kuliner</span>
+    </a>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Kuliner</h6>
+            <a class="collapse-item" href="<?php echo base_url('/index.php/kuliner/index') ?>">Data Kuliner</a>
+            <a class="collapse-item" href="<?php echo base_url('/index.php/kuliner/tambah_kuliner') ?>">tambah kuliner</a>
         </div>
     </div>
 </li>
