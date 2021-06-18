@@ -45,6 +45,7 @@ class Pasien extends CI_Controller {
 		$data['tmp_lahir'] = $this->input->post('tmp_lahir');
 		$data['tgl_lahir'] = $this->input->post('tgl_lahir');
 		$data['email'] = $this->input->post('email');
+		$data['foto'] = $this->pasien_model->upload_foto();
 
 		//method save data
 		$this->pasien_model->save($data);
@@ -54,7 +55,44 @@ class Pasien extends CI_Controller {
 
 
 	}
+	public function profile($id){
+		$this->load->model('pasien_model');
+		$data['pasien'] = $this->pasien_model->findById($id);
+		$this->load->view('pasien/profile',$data);
+	}
 
+	public function edit($id){
+		$this->load->model('pasien_model');
+		$data['pasien'] = $this->pasien_model->findById($id);
+		$this->load->view('pasien/edit',$data);
+	}
+
+	public function update(){
+		//panggil model
+		$this->load->model('pasien_model');
+		
+
+		//inputan id
+		$id = $this->input->post('id');
+		
+		//tambah data
+		$data['kode'] = $this->input->post('kode');
+		$data['nama'] = $this->input->post('nama');
+		$data['gender'] = $this->input->post('gender');
+		$data['tmp_lahir'] = $this->input->post('tmp_lahir');
+		$data['tgl_lahir'] = $this->input->post('tgl_lahir');
+		$data['email'] = $this->input->post('email');
+
+		$data['foto'] = $this->pasien_model->upload_foto();
+
+		//method update data
+		$this->pasien_model->update($data,$id);
+
+		//redirect	
+		return redirect('pasien/index');
+
+
+	}
 	
 
 }

@@ -40,6 +40,7 @@
                                 <th>Tempat Lahir</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Email</th>
+                                <th>foto</th>
                                 <th>Action</th>
                             </tr>
                             
@@ -55,7 +56,12 @@
                                         <td>'.$pasien->tmp_lahir.'</td>
                                         <td>'.$pasien->tgl_lahir.'</td>
                                         <td>'.$pasien->email.'</td>
-                                        <td><a href="'.base_url().'index.php/pasien/delete/'.$pasien->id.'">Delete</a></td>
+                                        <td> <img src="'.base_url().'backend/img/'.$pasien->foto.'"  width="100" height="100"alt=""></td>
+                                        
+                                        <td>
+                                        <a href="'.base_url().'index.php/pasien/profile/'.$pasien->id.'">Edit</a>
+                                        <a href="'.base_url().'index.php/pasien/edit/'.$pasien->id.'">Edit</a>
+                                        <a href="'.base_url().'index.php/pasien/delete/'.$pasien->id.'">Delete</a></td>
                                     </tr>       
                                      ';   
                                 }

@@ -24,43 +24,42 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <h3>Profile Pasien</h3>
 
-                    <!-- Page Heading -->
-                    <h1 class="h2 mb-4 text-center text-gray-800">Tambah Pasien</h1>
-                    <?php echo form_open_multipart('pasien/tambah'); ?>
-                     
-                    
-                    <label for="">Kode</label>
-                    <input type="text" name="kode" class="form-control">
-
-                    
-                    <label for="">Nama</label>
-                    <input type="text" name="nama" class="form-control">
-
-                    <select name="gender" class="form-control">
-                        <option value="">Masukan Jenis Kelamin</option>
-                        <option value="Laki Laki">Laki Laki</option>
-                        <option value="Perempuan">Perempuan</option>
-                    </select>
-                    
-                    <label for="">Tempat Lahir</label>
-                    <input type="text" name="tmp_lahir" class="form-control">
-                    
-                    <label for="">Tanggal Lahir</label>
-                    <input type="date" name="tgl_lahir" class="form-control">
-                    
-                    <label for="">Email</label>
-                    <input type="text" name="email" class="form-control">
-                    
-                    
-                    <label for="">Upload Foto</label>
-                    <input type="file" name="foto" class="form-control">
-                    
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-
-                    <?php echo form_close(); ?>
-                     
-
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="<?=base_url().'backend/img/'.$pasien->foto?>" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <table class="table table-bordered  text-white">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bg-primary">Nama</td>
+                                            <td class="bg-danger"><?=$pasien->nama?></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="bg-primary">Email</td>
+                                            <td class="bg-danger"><?=$pasien->email?></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="bg-primary">Tanggal Lahir</td>
+                                            <td class="bg-danger"><?=$pasien->tgl_lahir?></td>
+                                        </tr>
+                                    </tbody>
+                                </table>    
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 
