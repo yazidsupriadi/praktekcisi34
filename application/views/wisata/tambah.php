@@ -26,37 +26,31 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h2 mb-4 text-center text-gray-800">Data Pasien</h1>
-                    <a href="<?php echo base_url()?>index.php/kuliner/save" class="btn btn-primary">Tambah</a>
+                    <h1 class="h2 mb-4 text-center text-gray-800">Tambah Pasien</h1>
+                    <form action="<?=base_url()?>index.php/wisata/save" method="post">
                     
-                    <a href="<?php echo base_url()?>index.php/login/logout" class="btn btn-primary">Logout</a>
+                    <label for="">Nama</label>
+                    <input type="text" name="nama" class="form-control">
+                    
+                    <label for="">Deskripsi</label>
+                    <textarea name="deskripsi" class="form-control"id="" cols="30" rows="10"></textarea>
 
-                    <table class="table table-striped">
-                        <thead class="bg-primary text-white">
-                            <tr>
-                                <th>Nama</th>
-                                <th>Action</th>
-                            </tr>
-                            
-                        </thead>
-                        <tbody>
-                            <?php
-                                foreach($jenis_kuliner->result() as $kuliner){
+                    <select name="jenis_kuliner_id" id="" class="form-control">
+                        <option value="">Silahkan pilih satu jenis kuliner</option>
+                        <?php
+                                foreach($join_wisata_kuliner->result() as $wisatakuliner){
                                      echo'    
-                                    <tr>
-                                        <td>'.$kuliner->nama_jenis_kuliner.'</td>
-                                        
-                                        <td>
-                                        <a class="btn btn-success" href="'.base_url().'index.php/kuliner/view/'.$kuliner->id_kuliner.'">View</a>
-                                        <a class="btn btn-primary" href="'.base_url().'index.php/kuliner/edit/'.$kuliner->id_kuliner.'">Edit</a>
-                                        <a class="btn btn-danger" href="'.base_url().'index.php/kuliner/delete/'.$kuliner->id_kuliner.'">Delete</a></td>
-                                    </tr>       
+                                    <option value="'.$wisatakuliner->id_kuliner.'">
+                                        '. $wisatakuliner->nama_jenis_kuliner.'        
+                                 </option>       
                                      ';   
                                 }
 
                             ?>
-                        </tbody>
-                    </table>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    </form>
+                     
 
                 </div>
                 <!-- /.container-fluid -->
@@ -99,7 +93,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?php echo base_url()?>index.php/login/logout">Logout</a>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
         </div>

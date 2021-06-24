@@ -28,9 +28,7 @@
                     <!-- Page Heading -->
                     <h1 class="h2 mb-4 text-center text-gray-800">Data Pasien</h1>
                     <a href="<?php echo base_url()?>index.php/pasien/save" class="btn btn-primary">Tambah</a>
-                    
-                    <a href="<?php echo base_url()?>index.php/login/logout" class="btn btn-primary">Logout</a>
-
+                
                     <table class="table table-striped">
                         <thead class="bg-primary text-white">
                             <tr>
@@ -111,7 +109,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="l<?php echo base_url()?>index.php/login/logout ">Logout</a>
                 </div>
             </div>
         </div>

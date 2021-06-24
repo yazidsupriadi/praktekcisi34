@@ -39,7 +39,7 @@ class Kuliner extends CI_Controller {
 		$this->load->model('kuliner_model');
 		
 		//tambah data
-		$data['nama'] = $this->input->post('nama');
+		$data['nama_jenis_kuliner'] = $this->input->post('nama');
 		//method save data
 		$this->kuliner_model->save($data);
 
