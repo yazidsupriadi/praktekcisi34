@@ -93,6 +93,10 @@ class Pasien extends CI_Controller {
 
 
 	}
+
+	public function gempa(){
+		$this->load->view('pasien/gempa');
+	}
 	
 
 }
